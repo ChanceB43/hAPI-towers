@@ -1,8 +1,4 @@
-const express = require("express");
-const app = express();
-const path = require("path");
 const mongoose = require('mongoose');
-
 const Towers = require("./models/towers");
 
 mongoose.connect('mongodb://localhost:27017/hapiTowers', {
@@ -17,14 +13,15 @@ mongoose.connect('mongodb://localhost:27017/hapiTowers', {
         console.log(err)
     });
 
-
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
-
-app.get("/towers", (req, res) => {
-    res.send("hAPI TOWERS!")
-})
-
-app.listen(3000, () => {
-    console.log("LISTENING ON PORT 3000")
-})
+    const t = new Towers({
+        name: "Archer",
+        health: 100,
+        rank: "private"
+    })
+    t.save()
+        .then(t => {
+            console.log(t)
+    })
+        .catch(e => {
+            console.log(e)
+        });
