@@ -46,3 +46,12 @@ const seedUser = [
         money: 300
     }
 ]
+
+
+// User.insertMany(seedUser)
+//     .then(res => {
+//         console.log(res)
+//     })
+//     .catch(e => {
+//         console.log(e)
+//     })
