@@ -21,8 +21,10 @@ mongoose.connect('mongodb://localhost:27017/hapiTowers', {
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-app.get("/towers", (req, res) => {
-    res.send("hAPI TOWERS!")
+app.get("/", async (req, res) => {
+    const towers = await Towers.find({})
+    console.log(towers)
+    res.send("ALL hAPI TOWERS HERE!")
 })
 
 app.listen(3000, () => {
