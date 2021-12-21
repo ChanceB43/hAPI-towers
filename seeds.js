@@ -13,15 +13,24 @@ mongoose.connect('mongodb://localhost:27017/hapiTowers', {
         console.log(err)
     });
 
-    const t = new Towers({
+/////////////////////////////Tower Seeds///////////////////////////////
+
+const seedTowers = [
+    {
         name: "Archer",
-        health: 100,
-        rank: "private"
-    })
-    t.save()
-        .then(t => {
-            console.log(t)
-    })
-        .catch(e => {
-            console.log(e)
-        });
+        rank: "private",
+        health: 200
+    }
+]
+
+
+////////////////////////////Enemy Seeds////////////////////////////////
+
+const seedEnemy = [
+    {
+        name: "Sauron",
+        rank: "Grand Magus",
+        speed: "Slow",
+        health: 150
+    }
+]
