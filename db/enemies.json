@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Smiley",
+        "img": "../images/smiley.gif",
+        "rank": "Grunt",
+        "maxHealth": 100,
+        "speed": 0.4,
+        "power": 10
+    },
+    {
+        "name": "Blue Frowny",
+        "img": "../images/blueFrowny.png",
+        "rank": "Elite",
+        "maxHealth": 200,
+        "speed": 0.6,
+        "power": 50
+    },
+    {
+        "name": "Red Frowny",
+        "img":"../images/redFrowny.png",
+        "rank": "Hunter",
+        "maxHealth": 300,
+        "speed": 0.5,
+        "power": 100
+    }
+]

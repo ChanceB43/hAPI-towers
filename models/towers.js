@@ -2,15 +2,11 @@ const { truncate } = require("fs");
 const mongoose = require("mongoose");
 
 const towerSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    rank: {
-        type: String,
-        required: true
-    },
-    health: Number
+    name: String,
+    img: String,
+    rank: String,
+    power: Number,
+    powerSpeed: Number,
 })
 
 const Towers = mongoose.model("Towers", towerSchema);
