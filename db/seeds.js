@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Towers = require("./models/towers");
+const Towers = require("../models/towers");
 
 mongoose.connect('mongodb://localhost:27017/hapiTowers', {
      useNewUrlParser: true, 
