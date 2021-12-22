@@ -1,32 +1,37 @@
 const express = require("express");
 const app = express();
+const cors = ('cors')
+
+aoo.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 const path = require("path");
-const mongoose = require('mongoose');
-
-const Towers = require("./models/towers");
-
-mongoose.connect('mongodb://localhost:27017/hapiTowers', {
-     useNewUrlParser: true, 
-     useUnifiedTopology: true 
-})
-    .then(() => {
-        console.log("MONGO CONNECTION OPEN!")
-    })
-    .catch(err => {
-        console.log("OH NO MONGO CONNECTION ERROR!")
-        console.log(err)
-    });
 
 
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
+/* Controllers */
+const towersController = require('./controller/towers');
 
-app.get("/", async (req, res) => {
-    const towers = await Towers.find({})
-    console.log(towers)
-    res.send("ALL hAPI TOWERS HERE!")
-})
+const enemiesController = require('./controller/enemies');
+/* End Controllers */
 
-app.listen(3000, () => {
+
+// app.set("views", path.join(__dirname, "views"));
+// app.set("view engine", "ejs");
+
+
+// app.get("/towers", (req, res) => {
+//     res.send("hAPI TOWERS!")
+// })
+
+// app.get("/", async (req, res) => {
+//     const towers = await Towers.find({})
+//     console.log(towers)
+//     res.send("ALL hAPI TOWERS HERE!")
+// })
+
+
+app.set('port', process.env.PORT || 3000)
+app.listen(app.get('port') , () => {
     console.log("LISTENING ON PORT 3000")
 })

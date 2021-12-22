@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Smiley",
+        "img": "../images/smiley.gif",
+        "rank": "Marine",
+        "power":15 
+    },
+    {
+        "name": "Smiley Love",
+        "img": "../images/SmileyLove.png",
+        "rank": "Lieutenant",
+        "power":15,
+        "powerSpeed": 20 
+    },
+    {
+        "name": "Smiley Glass",
+        "img": "../images/SmileyGlass.png",
+        "rank": "Captain",
+        "power":50,
+        "powerSpeed": 10 
+    }
+    
+]
